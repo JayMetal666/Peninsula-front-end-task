@@ -1,0 +1,356 @@
+/* ---------- Google Font Import ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap');
+
+/* ---------- Global Reset ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Lexend", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom right, #f7f8fa, #ffffff);
+  color: #222;
+  scroll-behavior: smooth;
+}
+
+/* ---------- Navbar Base ---------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  z-index: 999;
+}
+
+/* Container */
+.nav-container {
+  max-width: 1200px;
+  height: 70px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo svg {
+  width: 120px;
+  height: auto;
+}
+
+/* ---------- Desktop Menu ---------- */
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links ul li a,
+.nav-links ul li button {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 10px;
+  transition: color 0.3s;
+}
+
+.nav-links ul li a:hover,
+.nav-links ul li button:hover {
+  color: #E30138;
+}
+
+/* ---------- Dropdown Menu ---------- */
+.dropdown-parent {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-radius: 6px;
+  min-width: 200px;
+  flex-direction: column;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.dropdown li a {
+  padding: 10px 16px;
+  display: block;
+  color: #333;
+}
+
+.dropdown li a:hover {
+  background: #fce7ea;
+  color: #E30138;
+}
+
+.dropdown-parent:hover .dropdown {
+  display: flex;
+}
+
+/* ---------- Phone ---------- */
+.phone {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.phone-number {
+  color: #E30138;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.phone-sub {
+  font-size: 12px;
+  color: #555;
+}
+
+/* ---------- Mobile Menu Button ---------- */
+.mobile-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* ---------- Mobile Menu ---------- */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  border-top: 1px solid #eee;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.05);
+  padding: 10px 0;
+}
+
+.mobile-menu.active {
+  display: flex;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 20px;
+}
+
+.mobile-menu a, .mobile-menu button {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.mobile-menu a:hover {
+  color: #E30138;
+}
+
+/* Dropdown inside mobile */
+.mobile-dropdown {
+  display: none;
+  flex-direction: column;
+  padding-left: 16px;
+  border-left: 2px solid #f2f2f2;
+}
+
+.mobile-dropdown.active {
+  display: flex;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .nav-links { display: none; }
+  .phone { display: none; }
+  .mobile-btn { display: block; }
+}
+
+/* ---------- Page Content ---------- */
+main {
+  flex: 1;
+  padding-top: 80px; /* prevent navbar overlap */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero Section */
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #555555;
+  max-width: 600px;
+}
+
+/* Content Section */
+.content {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.7;
+  color: #ffffff;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  position: relative;
+  width: 100%;
+  background: #f9fafb;
+  color: #333;
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 100;
+  font-family: "Lexend", sans-serif; /* changed from Noto Sans */
+}
+
+footer .footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+footer h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+footer a {
+  color: #1f2937;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+footer a:hover {
+  color: #e30138;
+  text-decoration: underline;
+}
+
+footer address {
+  font-style: normal;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+footer .phone-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  background: #e30138;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+footer .phone-link:hover {
+  background: #c3002f;
+}
+
+footer .social-links ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+}
+
+footer .social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  color: #374151;
+  transition: all 0.3s ease;
+}
+
+footer .social-links a:hover {
+  background: #e30138;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+footer .footer-bottom {
+  background: #002d72;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  text-align: fixed;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  height: 180px;
+}
+
+/* ---------- Responsive Footer ---------- */
+@media (max-width: 768px) {
+  footer .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  footer .social-links ul {
+    justify-content: center;
+  }
+
+  footer .phone-link {
+    margin: 0.5rem auto 0;
+  }
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
